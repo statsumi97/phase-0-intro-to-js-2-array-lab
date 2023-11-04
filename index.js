@@ -1,53 +1,59 @@
-//1st task
-const cats = ["Milo", "Otis", "Garfield"]
-function destructivelyAppendCat(name) {
-    cats.push(name)
+const cats = ['Milo', 'Otis', 'Garfield'];
+
+//
+function destructivelyAppendCat() {
+    cats.push('Ralph');
 }
-//2nd task
-const additionalCats = [...cats, "Ralph"]
-console.log(cats)
-console.log(additionalCats)
-//3rd task
-function destructivelyPrependCat(name) {
-    cats.unshift(name)
+
+//
+function destructivelyPrependCat() {
+    cats.unshift('Bob');
 }
-const prependCats = [...cats, "Bob"]
-console.log(prependCats)
-//4th task
-function destructivelyRemoveLastCat(name) {
-    cats.pop(name)
+
+//
+function destructivelyRemoveLastCat() {
+    cats.pop();
 }
-const LastCat = [...cats]
-console.log(LastCat)
-//5th task
-function destructivelyRemoveFirstCat(name) {
-    cats.shift(name)
+
+//
+function destructivelyRemoveFirstCat(){
+    cats.shift();
 }
-const FirstCat = [...cats]
-console.log(FirstCat)
-//6th task
-const newCats = [...cats, "Broom"] 
-    function appendCat(name) {
-    const newCats = cats.slice()
-    newCats.push(name)
-    return newCats
+
+//
+function appendCat(name) {
+    const newCatsArray = [...cats, name];
+    return newCatsArray;
 }
-//7th task
-const preCats = [...cats, "Arnold"]
-    function prependCat(name) {
-    const preCats = cats.slice()
-    preCats.unshift(name)
-    return preCats 
+console.log(newCatsArray('Broom'));
+
+//
+function prependCat(name) {
+    const prependCatsArray = [name, ...cats];
+    return prependCatsArray;
 }
-//8th task
-function removeLastCat(name) {
-    const newCats = cats.slice(0, cats.length - 1)
-    return newCats
+console.log(prependCatsArray('Arnold'));
+
+//
+function removeLastCat() {
+    const removeCatsArray = cats.slice(0, -1);
+    return removeCatsArray;
 }
-console.log(otherLastCat)
-//9th task
-function removeFirstCat(name) {
-    const newFirstCat = cats.slice(1, cats.length - 0)
-    return newFirstCat
+
+//
+function removeFirstCat() {
+    const removeFirstCatsArray = cats.slice(1);
+    return removeFirstCatsArray;
 }
-console.log(otherFirstCat)
+
+/*
+describe('removeFirstCat()', function () {
+      it('removes the first cat from the cats array and returns a new array, leaving the cats array unchanged', function () {
+        expect(removeFirstCat()).to.have.ordered.members(["Otis", "Garfield"]);
+
+        expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
+      });
+    });
+  });
+});
+  */
